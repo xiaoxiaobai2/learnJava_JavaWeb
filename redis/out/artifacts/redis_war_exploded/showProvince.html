@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $.get("findProvinceServlet",{},function (data) {
+                var $province = $("#province");
+                $(data).each(function () {
+                    var option="<option id='"+this.id+"'>" + this.name+"</option>";
+                    $province.append(option);
+                })
+            },"json")
+        })
+    </script>
+</head>
+<body>
+    <select id="province">
+        <option>陕西</option>
+    </select>
+</body>
+</html>

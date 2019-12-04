@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<script>
+    window.onload=function () {
+        //给图片绑定点击事件
+        function f(){
+            var date = new Date();
+            document.getElementById("checkImg").src="/response/checkImage?"+date;
+        }
+        document.getElementById("checkImg").onclick=f;
+
+        //给字符串绑定点击事件
+        document.getElementById("change").onclick=f;
+    }
+</script>
+<body>
+    <img id="checkImg" src="/response/checkImage">
+    <a id="change" href="">看不起？换一张</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-Jq基本语法</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="div1">div1...</div>
+    <div class="div2">div2...</div>
+    <div>
+        <input type="button" value="点我" id="button">
+    </div>
+</body>
+<script>
+    //1、绑定事件
+    $("#button").click(function () {
+        alert("我被点了。。");
+    });
+    //2、入口函数。dom文件加载完成后执行的代码
+    $(function () {
+        alert("文档加载完成！")
+    });
+    //3、样式控制
+    $(".div1").css("backgroundColor","pink");
+</script>
+</html>

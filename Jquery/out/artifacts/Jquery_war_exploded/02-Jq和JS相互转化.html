@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-Jq和JS相互转化</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="div1">div1...</div>
+    <div class="div2">div2...</div>
+</body>
+<script>
+    //js获取
+    var divs = document.getElementsByTagName("div");
+    for (var i = 0; i < divs.length; i++) {
+        divs[i].innerText = "aaa";
+    }
+    //jq获取
+    var $divs = $("div");
+    $divs.html("bbb");
+
+    //js和 jq相互转换
+    //1、js转jq
+    $(divs).html("ccc");
+    //2、jq 转 js
+    $divs[0].innerText = "eee";
+    $divs.get(1).innerText = "ddd";
+</script>
+</html>
